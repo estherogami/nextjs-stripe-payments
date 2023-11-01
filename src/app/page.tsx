@@ -1,5 +1,7 @@
+"use client";
 import Image from 'next/image'
 import styles from './page.module.css'
+import checkout from "./checkout";
 
 export default function Home() {
   return (
@@ -18,32 +20,29 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className={styles.card} 
+          onClick={() => {
+            checkout([
+                {
+                  price: "price_1O7SMlFI5Xg6FK2GkaUlHV1N",
+                  quantity: 1
+                }
+              ]);
+          }}>
           <h2>
             One day tour <span>-&gt;</span>
           </h2>
          
           <p>- Visit the most important touristic spots of the city.</p>
         </a>
-
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className={styles.card} >
           <h2>
             2 days tour <span>-&gt;</span>
           </h2>
           
           <p>- Visit the most important touristic spots of the city</p>
           <p>- 1 day trip to the national park</p>
-        </a>
+        </div>
 
         {/* <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
